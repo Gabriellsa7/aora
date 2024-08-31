@@ -4,10 +4,12 @@ import Logo from "../components/logo/logo";
 import TextComponent from "../components/text/text";
 import Button from "../components/button/button";
 import { styles } from "./index.style";
+import { useRouter } from "expo-router";
 
 const statusBarHeight = Constants.statusBarHeight;
 
 export default function Index() {
+  const router = useRouter();
   return (
     <>
       <StatusBar translucent backgroundColor="#161622" barStyle="default" />
@@ -33,8 +35,16 @@ export default function Index() {
               Limitless Exploration with Aora
             </TextComponent>
           </View>
-          <Button title="Login" textStyle={styles.buttonText} />
-          {/* <Button title="Sign up" textStyle={styles.buttonText} /> */}
+          <Button
+            title="Login"
+            textStyle={styles.buttonText}
+            onPress={() => router.push("./pages/login")}
+          />
+          <Button
+            title="Sign up"
+            textStyle={styles.buttonText}
+            onPress={() => router.push("./pages/sign-up")}
+          />
         </View>
       </View>
     </>
