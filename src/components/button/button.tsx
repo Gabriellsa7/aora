@@ -35,6 +35,7 @@ export default Button;
 
 const styles = StyleSheet.create({
   button: {
+    width: 300,
     paddingHorizontal: 82,
     paddingVertical: 18,
     backgroundColor: "#FF8C00",
