@@ -2,7 +2,7 @@ import { Image, StatusBar, StyleSheet, Text, View } from "react-native";
 import Constants from "expo-constants";
 import Logo from "../components/logo/logo";
 import TextComponent from "../components/text/text";
-import Button from "../components/button/button";
+import Button from "../components/button/button-component";
 import { styles } from "./index.style";
 import { useRouter } from "expo-router";
 
