@@ -1,10 +1,10 @@
-import { Image, StatusBar, StyleSheet, Text, View } from "react-native";
+import { Image, StatusBar, View } from "react-native";
 import Constants from "expo-constants";
 import Logo from "../components/logo/logo";
 import TextComponent from "../components/text/text";
 import Button from "../components/button/button-component";
 import { styles } from "./index.style";
-import { useRouter } from "expo-router";
+import { Link, useRouter } from "expo-router";
 
 const statusBarHeight = Constants.statusBarHeight;
 
@@ -45,6 +45,12 @@ export default function Index() {
             textStyle={styles.buttonText}
             onPress={() => router.push("./pages/sign-up")}
           />
+          {/* Temporary */}
+          <Link href={"./pages/home"}>
+            <TextComponent color="#FFFFFF" size={16}>
+              Home
+            </TextComponent>
+          </Link>
         </View>
       </View>
     </>
