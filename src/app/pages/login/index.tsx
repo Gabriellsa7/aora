@@ -14,7 +14,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [showPassword, setShowPassword] = useState(false);
-
+  // button submit
   const handleSubmit = () => {
     if (email.trim() === "" || password.trim() === "") {
       setError("All fields are required");
@@ -27,6 +27,7 @@ const Login = () => {
   const handleTogglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
   return (
     <View style={[styles.container, { paddingTop: statusBarHeight + 122 }]}>
       <StatusBar translucent backgroundColor="#161622" barStyle="default" />
@@ -62,11 +63,14 @@ const Login = () => {
             <TextComponent color="#FFFFFF">Forgot Password</TextComponent>
           </View>
         </View>
+
         <Button
+          onPress={handleSubmit}
           title="Log in"
           style={styles.button}
           textStyle={styles.buttonText}
         />
+
         <View style={{ alignItems: "center" }}>
           <TextComponent color="#FFFFFF">
             Don’t have an account?{" "}

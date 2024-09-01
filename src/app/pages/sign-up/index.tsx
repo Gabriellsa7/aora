@@ -66,7 +66,9 @@ const SignUp = () => {
             />
           </View>
         </View>
+
         <Button
+          onPress={handleSubmit}
           title="Sign Up"
           style={styles.button}
           textStyle={styles.buttonText}
