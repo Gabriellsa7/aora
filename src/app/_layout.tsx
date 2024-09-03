@@ -1,19 +1,21 @@
 import { Slot } from "expo-router";
-import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "./pages/home";
 import Profile from "./pages/profile";
 import Created from "./pages/created";
 import Saved from "./pages/saved";
 import { FontAwesome5 } from "@expo/vector-icons";
-import Login from "./pages/login";
 
 const Tab = createBottomTabNavigator();
+
+function TabLayout() {}
 
 export default function RootLayout() {
   return (
     <NavigationContainer independent={true}>
       <Tab.Navigator
+        initialRouteName="Index"
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName: any;
@@ -31,7 +33,9 @@ export default function RootLayout() {
             // You can return any component that you like here!
             return <FontAwesome5 name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: "tomato",
+          headerShown: false,
+          tabBarStyle: { backgroundColor: "#161622", borderTopWidth: 0 },
+          tabBarActiveTintColor: "#FFFFFF",
           tabBarInactiveTintColor: "gray",
         })}
       >
@@ -40,7 +44,7 @@ export default function RootLayout() {
         <Tab.Screen name="Created" component={Created} />
         <Tab.Screen name="Saved" component={Saved} />
       </Tab.Navigator>
-      {/* <Slot />; */}
+      {/* <Slot /> */}
     </NavigationContainer>
   );
 }
