@@ -23,8 +23,11 @@ const Home = () => {
     <>
       {/* Adicionando a StatusBar */}
       <StatusBar barStyle="light-content" backgroundColor="#161622" />
-      <ScrollView style={{ backgroundColor: "#161622" }}>
-        <View style={[styles.container, { paddingTop: statusBarHeight + 72 }]}>
+      <ScrollView
+        style={{ backgroundColor: "#161622" }}
+        showsVerticalScrollIndicator={false}
+      >
+        <View style={[styles.container, { paddingTop: statusBarHeight + 40 }]}>
           <View style={styles.titleComponent}>
             <View>
               <TextComponent color="#CDCDE0" size={14} weight="500">
