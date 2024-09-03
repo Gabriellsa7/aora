@@ -13,7 +13,7 @@ export default function Index() {
   return (
     <>
       <StatusBar translucent backgroundColor="#161622" barStyle="default" />
-      <View style={[styles.container, { paddingTop: statusBarHeight + 8 }]}>
+      <View style={styles.container}>
         <View style={[styles.section, { paddingTop: statusBarHeight + 40 }]}>
           <Logo />
           <View>
