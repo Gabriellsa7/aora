@@ -4,7 +4,7 @@ import { Text, TextStyle, StyleSheet } from "react-native";
 interface TextComponentProps {
   children: React.ReactNode;
   style?: TextStyle; // Allows you to add custom styles
-  weight?: "regular" | "bold" | "500"; // Example of style variation
+  weight?: "regular" | "bold" | "500" | "400"; // Example of style variation
   size?: number; // font size
   color?: string; // text color
 }
