@@ -8,8 +8,18 @@ import { Link, useRouter } from "expo-router";
 
 const statusBarHeight = Constants.statusBarHeight;
 
-export default function Index() {
+export default function App() {
   const router = useRouter();
+
+  const navigateToLogin = () => {
+    console.log("Navigating to Login"); // Debug log
+    router.push("./pages/login");
+  };
+
+  const navigateToSignUp = () => {
+    console.log("Navigating to Sign Up"); // Debug log
+    router.push("./pages/sign-up");
+  };
   return (
     <>
       <StatusBar translucent backgroundColor="#161622" barStyle="default" />
@@ -35,15 +45,17 @@ export default function Index() {
               Limitless Exploration with Aora
             </TextComponent>
           </View>
+
           <Button
             title="Login"
             textStyle={styles.buttonText}
-            onPress={() => router.push("./pages/login")}
+            onPress={navigateToLogin}
           />
+
           <Button
             title="Sign up"
             textStyle={styles.buttonText}
-            onPress={() => router.push("./pages/sign-up")}
+            onPress={navigateToSignUp}
           />
           {/* Temporary */}
           <Link href={"./pages/home"}>
