@@ -14,10 +14,15 @@ import Input from "@/src/components/input/input";
 import { Ionicons } from "@expo/vector-icons";
 import PagerViewComponent from "./components/pager-view";
 import Cards from "@/src/components/cards/cards";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Profile from "../profile";
+import Created from "../created";
+import Saved from "../saved";
+import { FontAwesome5 } from "@expo/vector-icons";
 
 const statusBarHeight = Constants.statusBarHeight;
 
-const Home = () => {
+export const Home = () => {
   const [search, setSearch] = useState("");
   return (
     <>
@@ -82,5 +87,41 @@ const Home = () => {
     </>
   );
 };
+// Tab Navigator
+const Tab = createBottomTabNavigator();
 
-export default Home;
+const HomeWithTabs = () => {
+  return (
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName: any;
+
+          if (route.name === "Home") {
+            iconName = focused ? "home" : "home";
+          } else if (route.name === "Profile") {
+            iconName = focused ? "user" : "user";
+          } else if (route.name === "Created") {
+            iconName = focused ? "plus-circle" : "plus-circle";
+          } else {
+            iconName = focused ? "bookmark" : "bookmark";
+          }
+
+          // You can return any component that you like here!
+          return <FontAwesome5 name={iconName} size={size} color={color} />;
+        },
+        headerShown: false,
+        tabBarStyle: { backgroundColor: "#161622", borderTopWidth: 0 },
+        tabBarActiveTintColor: "#FFFFFF",
+        tabBarInactiveTintColor: "gray",
+      })}
+    >
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="Created" component={Created} />
+      <Tab.Screen name="Saved" component={Saved} />
+    </Tab.Navigator>
+  );
+};
+
+export default HomeWithTabs;
