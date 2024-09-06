@@ -20,6 +20,10 @@ export default function App() {
     console.log("Navigating to Sign Up"); // Debug log
     router.push("./pages/sign-up");
   };
+  const navigateToHome = () => {
+    console.log("Navigating to Sign Up"); // Debug log
+    router.push("./pages/home");
+  };
   return (
     <>
       <StatusBar translucent backgroundColor="#161622" barStyle="default" />
@@ -58,11 +62,12 @@ export default function App() {
             onPress={navigateToSignUp}
           />
           {/* Temporary */}
-          <Link href={"./pages/home"}>
-            <TextComponent color="#FFFFFF" size={16}>
-              Home
-            </TextComponent>
-          </Link>
+
+          <Button
+            title="Home"
+            textStyle={styles.buttonText}
+            onPress={navigateToHome}
+          />
         </View>
       </View>
     </>
