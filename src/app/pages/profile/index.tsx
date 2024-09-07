@@ -1,20 +1,29 @@
-import { View, Text, Image, ScrollView } from "react-native";
+import { View, Text, Image, ScrollView, Pressable } from "react-native";
 import React from "react";
 import Constants from "expo-constants";
 import { styles } from "./profile.style";
 import { MaterialIcons } from "@expo/vector-icons";
 import TextComponent from "@/src/components/text/text";
 import Cards from "@/src/components/cards/cards";
+import { useRouter } from "expo-router";
 
 const statusBarHeight = Constants.statusBarHeight;
 
 const Profile = () => {
+  const router = useRouter();
+
+  const navigateToLogin = () => {
+    console.log("Navigating to Login"); // Debug log
+    router.push("/pages/login");
+  };
   return (
     <>
       <ScrollView>
         <View style={[styles.container, { paddingTop: statusBarHeight + 20 }]}>
           <View style={{ alignItems: "flex-end" }}>
-            <MaterialIcons name="logout" size={24} color={"red"} />
+            <Pressable onPress={navigateToLogin}>
+              <MaterialIcons name="logout" size={24} color={"red"} />
+            </Pressable>
           </View>
           <View style={styles.profileContainer}>
             <Image source={require("@/assets/avatar.png")} />
