@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 24,
     gap: 20,
     backgroundColor: "#161622",
+    // alignItems: "center",
   },
   titleComponent: {
     flexDirection: "column",
@@ -15,10 +16,11 @@ export const styles = StyleSheet.create({
   topCardContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    // alignItems: "center",
   },
   profileTitleContainer: {
     flexDirection: "row",
-    gap: 5,
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 10,
   },
 });
