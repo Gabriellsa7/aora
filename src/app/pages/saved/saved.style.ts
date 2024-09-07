@@ -9,4 +9,7 @@ export const styles = StyleSheet.create({
     gap: 20,
     backgroundColor: "#161622",
   },
+  searchContainer: {
+    position: "relative",
+  },
 });
