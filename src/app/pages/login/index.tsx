@@ -5,7 +5,7 @@ import { styles } from "./login.styles";
 import TextComponent from "@/src/components/text/text";
 import Input from "@/src/components/input/input";
 import Button from "@/src/components/button/button-component";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 
 const statusBarHeight = Constants.statusBarHeight;
 
@@ -14,12 +14,14 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
   // button submit
   const handleSubmit = () => {
     if (email.trim() === "" || password.trim() === "") {
       setError("All fields are required");
     } else {
       setError(null);
+      router.push("../home");
       // Handle valid input
     }
   };
