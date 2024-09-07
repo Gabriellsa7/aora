@@ -62,12 +62,6 @@ export default function App() {
             onPress={navigateToSignUp}
           />
           {/* Temporary */}
-
-          <Button
-            title="Home"
-            textStyle={styles.buttonText}
-            onPress={navigateToHome}
-          />
         </View>
       </View>
     </>
