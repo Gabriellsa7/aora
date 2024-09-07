@@ -28,13 +28,15 @@ const Cards = ({
       <View style={styles.container}>
         <View style={styles.topCardContainer}>
           <View style={styles.profileTitleContainer}>
-            <Image source={profileImageSource} />
+            <View>
+              <Image source={profileImageSource} />
+            </View>
             <View style={styles.titleComponent}>
               <TextComponent color="#FFFFFF">{title}</TextComponent>
               <TextComponent color="#CDCDE0">{description}</TextComponent>
             </View>
           </View>
-          {/* 3 Dots Icon */}
+          {/* 3 Dots Vertical Icon */}
           <Ionicons name="ellipsis-vertical" size={24} color="#FFFFFF" />
         </View>
         <View>
