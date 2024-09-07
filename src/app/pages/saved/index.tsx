@@ -5,6 +5,7 @@ import { styles } from "./saved.style";
 import TextComponent from "@/src/components/text/text";
 import Input from "@/src/components/input/input";
 import Cards from "@/src/components/cards/cards";
+import { Ionicons } from "@expo/vector-icons";
 
 const statusBarHeight = Constants.statusBarHeight;
 
@@ -19,12 +20,23 @@ const Saved = () => {
               Saved Videos
             </TextComponent>
           </View>
-          <Input
-            value={search}
-            placeholder="Search your saved videos"
-            placeholderTextColor={"#CDCDE0"}
-            onChangeText={setSearch}
-          />
+          <View style={styles.searchContainer}>
+            <Input
+              value={search}
+              placeholder="Search your saved videos"
+              placeholderTextColor={"#CDCDE0"}
+              onChangeText={setSearch}
+            />
+            <View
+              style={{
+                position: "absolute",
+                right: 20,
+                paddingTop: 20,
+              }}
+            >
+              <Ionicons name="search" size={20} color={"#FFFFFF"} />
+            </View>
+          </View>
           <View
             style={{
               flexDirection: "column",
